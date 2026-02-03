@@ -62,6 +62,7 @@ export default function AdapterGrid({ adapters, onViewConfig, onViewDetails, loa
       {adapters.map((adapter) => {
         const registryEntry = findRegistryEntry(adapter);
         const icon = registryEntry?._meta?.about?.icon || null;
+        const description = registryEntry?._meta?.about?.description || null;
         
         return (
           <div key={adapter.id} className="col-lg-3 col-md-4 col-sm-6">
@@ -70,6 +71,7 @@ export default function AdapterGrid({ adapters, onViewConfig, onViewDetails, loa
               onViewConfig={onViewConfig}
               onViewDetails={onViewDetails}
               icon={icon}
+              description={description}
             />
           </div>
         );

@@ -8,9 +8,10 @@ interface AdapterCardProps {
   onViewConfig: (adapter: Adapter) => void;
   onViewDetails: (adapter: Adapter) => void;
   icon?: string | null;
+  description?: string | null;
 }
 
-export default function AdapterCard({ adapter, onViewConfig, onViewDetails, icon }: AdapterCardProps) {
+export default function AdapterCard({ adapter, onViewConfig, onViewDetails, icon, description }: AdapterCardProps) {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'ready':
@@ -34,6 +35,7 @@ export default function AdapterCard({ adapter, onViewConfig, onViewDetails, icon
     <div className="simple-card" style={{ 
       padding: '16px', 
       height: '100%',
+      minHeight: '200px',
       display: 'flex',
       flexDirection: 'column',
       border: '1px solid #e5e7eb',
@@ -76,8 +78,8 @@ export default function AdapterCard({ adapter, onViewConfig, onViewDetails, icon
             {(adapter.name || 'M').charAt(0).toUpperCase()}
           </div>
         )}
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <h3 className="simple-card-title heading heading--h3" style={{ marginBottom: '2px', fontSize: '14px', fontWeight: 600 }}>
+        <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <h3 className="simple-card-title heading heading--h3" style={{ marginBottom: '2px', fontSize: '14px', fontWeight: 500 }}>
             {adapter.name}
           </h3>
           <p style={{ 
@@ -93,10 +95,32 @@ export default function AdapterCard({ adapter, onViewConfig, onViewDetails, icon
       </div>
 
       <div style={{ 
+        flex: 1,
+        display: 'flex',
+        alignItems: 'flex-start',
+        marginBottom: '12px',
+        overflow: 'hidden'
+      }}>
+        <p style={{ 
+          fontSize: '12px', 
+          color: '#6B7280', 
+          lineHeight: '1.4',
+          display: '-webkit-box',
+          WebkitLineClamp: 3,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        }}>
+          {description || 'No description available'}
+        </p>
+      </div>
+
+      <div style={{ 
         display: 'flex', 
         justifyContent: 'space-between', 
         alignItems: 'center',
-        marginBottom: '12px'
+        marginBottom: '12px',
+        marginTop: 'auto'
       }}>
         <span 
           style={{ 
