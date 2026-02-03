@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kord-user-portal
+  namespace: default
+  labels:
+    app: kord-user-portal
+    version: v1.0.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kord-user-portal
+  template:
+    metadata:
+      labels:
+        app: kord-user-portal
+        version: v1.0.0
+    spec:
+      containers:
+      - name: portal
+        image: ghcr.io/alessandro-festa/kord-user-portal:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        env:
+        - name: BACKEND_API_URL
+          value: "http://192.168.105.3:8911"
+        - name: NEXT_PUBLIC_APP_DOMAIN
+          value: "kord-portal.192.168.105.3.sllip.io"
+        - name: PORT
+          value: "3000"
+        - name: NODE_ENV
+          value: "production"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+      restartPolicy: Always
