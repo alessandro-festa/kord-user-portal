@@ -8150,3 +8150,13 @@ node_modules/@swc/helpers/_/_await_async_generator/package.json
 .next/static/webpack/2885f8f4c0a6acf8.webpack.hot-update.json
 .next/static/webpack/webpack.2885f8f4c0a6acf8.hot-update.js
 .next/types/app/dashboard/page.ts
+.next/cache/webpack/client-development/7.pack.gz
+.next/cache/webpack/server-development/5.pack.gz
+.next/server/app/page.js
+.next/server/app/page_client-reference-manifest.js
+.next/static/chunks/app/page.js
+.next/static/webpack/60912b71da13954a.webpack.hot-update.json
+.next/static/webpack/8a4a2c9a64aeb5be.webpack.hot-update.json
+.next/static/webpack/webpack.60912b71da13954a.hot-update.js
+.next/static/webpack/webpack.8a4a2c9a64aeb5be.hot-update.js
+.next/types/app/page.ts
