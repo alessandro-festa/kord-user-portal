@@ -1,6 +1,6 @@
 import { User, Adapter, ClientConfig, ClientTokenResponse, ErrorResponse } from '@/types';
 
-const BACKEND_API_URL = process.env.BACKEND_API_URL || 'http://localhost:8911';
+const BACKEND_API_URL = process.env.NEXT_PUBLIC_BACKEND_API_URL || 'http://localhost:8911';
 
 class ApiClient {
   private baseUrl: string;
