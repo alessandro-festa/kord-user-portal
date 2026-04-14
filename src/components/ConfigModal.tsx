@@ -35,7 +35,7 @@ export default function ConfigModal({ adapter, isOpen, onClose }: ConfigModalPro
       }
 
       const token = await apiClient.getAdapterToken(userId, adapter!.name);
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || 'http://localhost:8911';
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL || 'http://10.9.0.80:8911';
       const clientConfig = apiClient.buildClientConfig(userId, adapter!, token, backendUrl);
       
       setConfig(clientConfig);

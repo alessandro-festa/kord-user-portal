@@ -26,14 +26,14 @@ spec:
           name: http
           protocol: TCP
         env:
-        - name: BACKEND_API_URL
-          value: "http://192.168.105.3:8911"
-        - name: NEXT_PUBLIC_APP_DOMAIN
-          value: "kord-portal.192.168.105.3.sllip.io"
-        - name: PORT
-          value: "3000"
-        - name: NODE_ENV
-          value: "production"
+          - name: BACKEND_API_URL
+            value: "http://10.9.0.80:8911"
+          - name: NEXT_PUBLIC_APP_DOMAIN
+            value: "kord-portal.192.168.105.3.sllip.io"
+          - name: PORT
+            value: "3000"
+          - name: NODE_ENV
+            value: "production"
         resources:
           requests:
             memory: "256Mi"
