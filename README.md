@@ -67,7 +67,8 @@ kubectl get svc kord-user-portal
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `BACKEND_API_URL` | Backend API base URL | `http://10.9.0.80:8911` |
+| `NEXT_PUBLIC_BACKEND_API_URL` | Backend API base URL | `http://10.9.0.80:8911` |
+| `BACKEND_API_URL` | Backend API base URL (server-side) | `http://10.9.0.80:8911` |
 | `NEXT_PUBLIC_APP_DOMAIN` | Portal domain for external links | `localhost:3000` |
 | `PORT` | Server port | `3000` |
 

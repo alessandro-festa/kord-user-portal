@@ -133,7 +133,8 @@ kubectl port-forward svc/kord-user-portal 3000:80
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `BACKEND_API_URL` | Backend API base URL | `http://10.9.0.80:8911` |
+| `NEXT_PUBLIC_BACKEND_API_URL` | Client-side Backend API URL | `http://10.9.0.80:8911` |
+| `BACKEND_API_URL` | Server-side Backend API URL | `http://10.9.0.80:8911` |
 | `NEXT_PUBLIC_APP_DOMAIN` | Portal domain | `kord-portal.192.168.105.3.sllip.io` |
 | `PORT` | Server port | `3000` |
 
